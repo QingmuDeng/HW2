@@ -27,4 +27,12 @@ module structuralFullAdder
     input carryin
 );
     // Your adder code here
+    wire G, P, PandCin;
+
+    `AND generator(G, a, b);
+    `XOR propagate(P, a,b);
+
+    `AND carry(PandCin, P, carryin);
+    `OR Cout(carryout, PandCin, G);
+    `XOR summation(sum, P, carryin);
 endmodule

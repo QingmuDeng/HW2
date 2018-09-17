@@ -1,0 +1,80 @@
+$date
+	Mon Sep 17 17:45:28 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testFullAdder $end
+$scope module adder $end
+$var wire 1 ! G $end
+$var wire 1 " P $end
+$var wire 1 # PandCin $end
+$var wire 1 $ a $end
+$var wire 1 % b $end
+$var wire 1 & carryin $end
+$var wire 1 ' carryout $end
+$var wire 1 ( sum $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#100000
+$dumpvars
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#1100000
+1%
+#1150000
+1"
+#1200000
+1(
+#2100000
+0%
+1$
+#3100000
+1%
+#3150000
+1!
+0"
+#3200000
+1'
+0(
+#4100000
+1&
+0%
+0$
+#4150000
+1(
+0!
+#4200000
+0'
+#5100000
+1%
+#5150000
+1"
+#5200000
+1#
+0(
+#5250000
+1'
+#6100000
+0%
+1$
+#7100000
+1%
+#7150000
+1!
+0"
+#7200000
+0#
+1(
+#8100000

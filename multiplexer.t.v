@@ -10,6 +10,10 @@ module testMultiplexer ();
     structuralMultiplexer mux(out, a0, a1, in0, in1, in2, in3);
 
     initial begin
+      a0 = 0; a1 = 0; in0 = 0; in1 = 0; in2 = 0; in3 = 0; #100
+      $dumpfile("mux.vcd");
+      $dumpvars(0, mux);
+
       // initialize all to zero
       a0 = 0; a1 = 0; in0 = 0; in1 = 0; in2 = 0; in3 = 0; #1000
       $display("a0  a1  in0  in1  in2  in3  | out | Expected Output");

@@ -6,19 +6,31 @@ module testFullAdder();
     reg a, b, carryin;
     wire sum, carryout;
 
-    behavioralFullAdder adder (sum, carryout, a, b, carryin);
+    // behavioralFullAdder adder (sum, carryout, a, b, carryin);
+    structuralFullAdder adder (sum, carryout, a, b, carryin);
 
     initial begin
+        a = 0; b = 0; carryin = 0; #100
+        $dumpfile("adder.vcd");
+        $dumpvars(0, adder);
 
-        $display("A B | ~A ~B | ~A~B");     // Header for the truth table for nAandnB
-        A = 0; B = 0; #1
-        $display("%b %b |  %b  %b |    %b", A, B, nA, nB, nAandnB);
-        A = 0; B = 1; #1
-        $display("%b %b |  %b  %b |    %b", A, B, nA, nB, nAandnB);
-        A = 1; B = 0; #1
-        $display("%b %b |  %b  %b |    %b", A, B, nA, nB, nAandnB);
-        A = 1; B = 1; #1
-        $display("%b %b |  %b  %b |    %b", A, B, nA, nB, nAandnB);
-
+        $display("Cin a  b | Cout  Sum");     // Header for the truth table for nAandnB
+        a = 0; b = 0; carryin = 0; #1000
+        $display(" %b  %b  %b |  %b     %b", carryin, a, b, carryout, sum);
+        a = 0; b = 1; carryin = 0; #1000
+        $display(" %b  %b  %b |  %b     %b", carryin, a, b, carryout, sum);
+        a = 1; b = 0; carryin = 0; #1000
+        $display(" %b  %b  %b |  %b     %b", carryin, a, b, carryout, sum);
+        a = 1; b = 1; carryin = 0; #1000
+        $display(" %b  %b  %b |  %b     %b", carryin, a, b, carryout, sum);
+        a = 0; b = 0; carryin = 1; #1000
+        $display(" %b  %b  %b |  %b     %b", carryin, a, b, carryout, sum);
+        a = 0; b = 1; carryin = 1; #1000
+        $display(" %b  %b  %b |  %b     %b", carryin, a, b, carryout, sum);
+        a = 1; b = 0; carryin = 1; #1000
+        $display(" %b  %b  %b |  %b     %b", carryin, a, b, carryout, sum);
+        a = 1; b = 1; carryin = 1; #1000
+        $display(" %b  %b  %b |  %b     %b", carryin, a, b, carryout, sum);
+        
     end
 endmodule
